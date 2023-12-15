@@ -20,10 +20,10 @@ python3 preprocessing.py  \
 Model training for summarization
 prepare the training config file qlora.yml and simply run accelerate launch -m axolotl.cli.train examples/llama-2/qlora.yml
 ```
-bash training.sh
+accelerate launch -m axolotl.cli.train examples/llama-2/qlora.yml
 ```
 ## Prediction
 After data preprocessing and model training, prepare the testing config file test.yml and simply run python3 -m axolotl.cli.inference examples/llama-2/test.yml --lora_model_dir="./qlora-out"
 ```
-bash inference.sh
+python3 -m axolotl.cli.inference examples/llama-2/test.yml --lora_model_dir="./qlora-out"
 ```
